@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
+                git --version
                 git 'https://github.com/HarshG777/cpp-repo.git'
             }
         }
