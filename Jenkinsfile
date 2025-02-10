@@ -3,17 +3,20 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git --version
+                echo 'Cloning repository...'
                 git 'https://github.com/HarshG777/cpp-repo.git'
+                sh 'ls -l'  // Verify that hello.cpp exists
             }
         }
         stage('Build') {
             steps {
-                sh 'g++ -o hello hello.cpp'
+                echo 'Building C++ program...'
+                sh 'g++ -v -o hello hello.cpp || exit 1'  // Verbose build output
             }
         }
         stage('Run') {
             steps {
+                echo 'Running C++ program...'
                 sh './hello'
             }
         }
