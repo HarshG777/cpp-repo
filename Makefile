@@ -1,2 +1,5 @@
 all:
-    g++ -o hello hello.cpp
+    g++ hello.cpp -o output
+
+run:
+    ./output
