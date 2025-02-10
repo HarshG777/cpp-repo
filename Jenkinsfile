@@ -1,23 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Clone') {
+        stage('Clone Repository') {
             steps {
-                echo 'Cloning repository...'
-                git 'https://github.com/HarshG777/cpp-repo.git'
-                sh 'ls -l'  // Verify that hello.cpp exists
+                git '<repository-url>'
             }
         }
-        stage('Build') {
+        stage('Build and Run') {
             steps {
-                echo 'Building C++ program...'
-                sh 'g++ -v -o hello hello.cpp || exit 1'  // Verbose build output
-            }
-        }
-        stage('Run') {
-            steps {
-                echo 'Running C++ program...'
-                sh './hello'
+                sh 'make all'
+                sh 'make run'
             }
         }
     }
