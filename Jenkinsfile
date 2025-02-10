@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Build and Run') {
             steps {
-                bat 'make all'
-                bat 'make run'
+                bat '"C:\\gcc\\bin\\g++.exe" -o output.exe hello.cpp'
+                bat 'output.exe'
             }
         }
     }
