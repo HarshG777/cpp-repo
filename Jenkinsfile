@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/HarshG777/cpp-repo.git'
+                sh 'git branch: main, url: https://github.com/HarshG777/cpp-repo.git'
             }
         }
         stage('Build and Run') {
