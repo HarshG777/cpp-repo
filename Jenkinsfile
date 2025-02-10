@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git ''
+                git 'https://github.com/HarshG777/cpp-repo.git'
             }
         }
         stage('Build') {
